@@ -18,7 +18,7 @@
 ## 2-2. 使用 BeautifulSoup - 定位標籤元件
 
 * 範例程式: `ch2/find.py`
-* [範例網頁](http://compthinkingdev.github.io/py-web-scraping/ch2/blog.html)
+* [範例網頁](http://compthinking-dev.github.io/py-web-scraping/ch2/blog.html)
 * 定位元件
     * `find()` 回傳第一個找到的元件; `find_all()` 回傳所有元件
     * `find_all(tag_name, tag_attrs, ..., **kwargs)`
@@ -34,7 +34,7 @@
 ## 2-3. 使用 BeautifulSoup - 巡覽網頁結構
 
 * 範例程式: `ch2/navigation.py`
-* [範例網頁](http://compthinkingdev.github.io/py-web-scraping/ch2/table.html)
+* [範例網頁](http://compthinking-dev.github.io/py-web-scraping/ch2/table.html)
 * 雖然 `find()`, `find_all()` 可以處理大部分問題, 但有時候巡覽網頁結構 (parent, children, next and previous siblings) 比較好用
 
 ```
