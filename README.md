@@ -4,7 +4,8 @@
 1. [環境設定與網頁爬蟲初探](lecture/ch1.md)
 * 1-1. 環境設定: 安裝 Python 及使用 venv
 * 1-2. 使用 Visual Studio Code
-* 1-3. 網頁文件解構與網頁爬蟲初探
+* 1-3. Browser-Based 開發環境
+* 1-4. 網頁文件解構與網頁爬蟲初探
 
 2. [使用 Beautiful Soup](lecture/ch2.md)
 * 2-1. 不要重覆造輪子：寫爬蟲之前
