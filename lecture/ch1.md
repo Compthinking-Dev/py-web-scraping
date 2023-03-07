@@ -67,3 +67,4 @@ html
   * 網站連不上
   * 找不到網頁
   * 找不到 Tag 或 Tag 的屬性
+* Note: `if __name__ == "__main__":` [是什麼意思?](https://compthinking.dev/posts/python-name-main)
