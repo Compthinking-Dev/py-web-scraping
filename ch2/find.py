@@ -13,11 +13,11 @@ if __name__ == "__main__":
     print(soup.h4.a.text)
 
     # 使用 key=value 取得標籤元件
-    print(soup.find(id="blog-post"))
+    print(soup.find(id="post-p"))
 
     # 當 key 含特殊字元時, 使用 dict 取得元件
-    # print(soup.find(data-blog="data-value"))  # 會導致 SyntaxError
-    print(soup.find(None, {"data-post": "data-value"}))
+    # print(soup.find(post-topic="current-ai"))  # 會導致 SyntaxError
+    print(soup.find(None, {"post-topic": "current-ai"}))
 
     # 取得所有 blog 主標題, 使用 tag
     main_titles = soup.find_all("h4")
