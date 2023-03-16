@@ -6,8 +6,8 @@ def ltn_news(url):
     articles = []
     resp = requests.get(url)
     soup = BeautifulSoup(resp.text, 'html.parser')
-    for ele in soup.find('ul', 'list').find_all('li'):
-        a = ele.find('a', 'tit')
+    for li in soup.find('ul', 'list').find_all('li'):
+        a = li.find('a', 'tit')
         article = {
             "link": a["href"],
             "title": a.div.h3.text.strip(),
