@@ -8,10 +8,10 @@ def wordpress(url):
     posts = []
     for article in soup.find_all("article", "blog-post"):
         post = {
-            "title": div.header.a.text.strip(),
-            "date": div.header.time.span.text.strip(),
-            "link": div.header.a["href"],
-            "summary": div.find("div", "inner-desc").text.strip()
+            "title": article.header.a.text.strip(),
+            "date": article.header.time.span.text.strip(),
+            "link": article.header.a["href"],
+            "summary": article.find("div", "inner-desc").text.strip()
         }
         posts.append(post)
     return posts
