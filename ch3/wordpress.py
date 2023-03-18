@@ -20,8 +20,8 @@ def wordpress(url):
 if __name__ == '__main__':
     URL = "https://decing.tw"
     posts = wordpress(URL)
-    print(f"{len(posts)} articles retrieved. The first 3:")
+    print(f"{len(posts)} posts retrieved. The first 3:")
     print("--")
     for post in posts[:3]:
-        print(article)
+        print(post)
         print("--")
