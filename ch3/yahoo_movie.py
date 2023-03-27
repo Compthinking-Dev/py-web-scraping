@@ -23,11 +23,10 @@ def get_movies(dom):
         name_div = div.find('div', 'release_movie_name')
         movie['ch_name'] = name_div.a.text.strip()
         movie['eng_name'] = name_div.find('div', 'en').a.text.strip()
-        movie['movie_id'] = get_movie_id(name_div.a['href'])
-        foto_div = div.parent.find_previous_sibling('div', 'release_foto')
-        movie['poster_url'] = foto_div.a.img['data-src']
         movie['release_date'] = get_date(div.find('div', 'release_movie_time').text)
         movie['intro'] = div.find('div', 'release_text').text.strip()
+        foto_div = div.parent.find_previous_sibling('div', 'release_foto')
+        movie['poster_url'] = foto_div.a.img['data-src']
         trailer_a = div.find_next_sibling('div', 'release_btn color_btnbox').find_all('a')[1]
         movie['trailer_url'] = trailer_a['href'] if 'href' in trailer_a.attrs else ''
         movies.append(movie)
@@ -42,15 +41,6 @@ def get_date(date_str):
         return date_str
     else:
         return match.group(0)
-
-
-def get_movie_id(url):
-    # e.g., 'https://movies.yahoo.com.tw/movieinfo_main/%E6%AD%BB%E4%BE%8D2-deadpool-2-7820.html
-    try:
-        movie_id = url.split('.html')[0].split('-')[-1]
-    except:
-        movie_id = url
-    return movie_id
 
 
 if __name__ == '__main__':
