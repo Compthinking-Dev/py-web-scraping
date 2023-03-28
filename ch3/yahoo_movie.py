@@ -20,9 +20,8 @@ def get_movies(dom):
     for div in divs:
         movie = dict()
         movie["expectation"] = div.find("div", "leveltext").span.text.strip()
-        name_div = div.find("div", "release_movie_name")
-        movie["ch_name"] = name_div.a.text.strip()
-        movie["eng_name"] = name_div.find("div", "en").a.text.strip()
+        movie["ch_name"] = div.find("div", "release_movie_name").a.text.strip()
+        movie["eng_name"] = div.find("div", "en").a.text.strip()
         movie["release_date"] = get_date(div.find("div", "release_movie_time").text)
         movie["intro"] = div.find("div", "release_text").text.strip()
         foto_div = div.parent.find_previous_sibling("div", "release_foto")
