@@ -14,8 +14,8 @@ def get_web_page(url):
 
 
 def get_movies(dom):
-    soup = BeautifulSoup(dom, "html.parser")
     movies = []
+    soup = BeautifulSoup(dom, "html.parser")    
     divs = soup.find_all("div", "release_info_text")
     for div in divs:
         movie = dict()
@@ -51,4 +51,4 @@ if __name__ == "__main__":
         for movie in movies:
             print(movie["ch_name"])
         with open("yahoo_movies.json", "w", encoding="utf-8") as f:
-            json.dump(movies, f, indent=2, sort_keys=True, ensure_ascii=False)
+            json.dump(movies, f, indent=2, ensure_ascii=False)
