@@ -25,11 +25,17 @@ def get_articles(dom, date):
 
     articles = []  # 儲存取得的文章資料
     divs = soup.find_all("div", "r-ent")
-    for d in divs:
-        if d.find("div", "date").text.strip() == date:  # 發文日期正確
+    for div in divs:
+        if div.find("div", "date").text.strip() == date:  # 發文日期正確
+            # 取得文章連結及標題
+            if div.find("div", "title").a:  # 有超連結，表示文章存在，未被刪除
+                link = div.find("div", "title").a["href"]
+                title = div.find("div", "title").a.text
+                author = div.find("div", "author").text if div.find("div", "author") else ""                
+
             # 取得推文數
             push_count = 0
-            push_str = d.find("div", "nrec").text
+            push_str = div.find("div", "nrec").text
             if push_str:
                 try:
                     push_count = int(push_str)  # 轉換字串為數字
@@ -40,18 +46,14 @@ def get_articles(dom, date):
                         push_count = 99
                     elif push_str.startswith("X"):
                         push_count = -10
-
-            # 取得文章連結及標題
-            if d.find("a"):  # 有超連結，表示文章存在，未被刪除
-                href = d.find("a")["href"]
-                title = d.find("a").text
-                author = d.find("div", "author").text if d.find("div", "author") else ""
-                articles.append({
-                    "title": title,
-                    "href": href,
-                    "push_count": push_count,
-                    "author": author
-                })
+            
+            articles.append({
+                "title": title,
+                "link": link,
+                "author": author,
+                "push_count": push_count
+            })
+            
     return articles, prev_url
 
 
