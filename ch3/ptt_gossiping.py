@@ -33,26 +33,26 @@ def get_articles(dom, date):
                 title = div.find("div", "title").a.text
                 author = div.find("div", "author").text if div.find("div", "author") else ""                
 
-            # 取得推文數
-            push_count = 0
-            push_str = div.find("div", "nrec").text
-            if push_str:
-                try:
-                    push_count = int(push_str)  # 轉換字串為數字
-                except ValueError:
-                    # 若轉換失敗，可能是"爆"或 "X1", "X2", ...
-                    # 若不是, 不做任何事，push_count 保持為 0
-                    if push_str == "爆":
-                        push_count = 99
-                    elif push_str.startswith("X"):
-                        push_count = -10
-            
-            articles.append({
-                "title": title,
-                "link": link,
-                "author": author,
-                "push_count": push_count
-            })
+                # 取得推文數
+                push_count = 0
+                push_str = div.find("div", "nrec").text
+                if push_str:
+                    try:
+                        push_count = int(push_str)  # 轉換字串為數字
+                    except ValueError:
+                        # 若轉換失敗，可能是"爆"或 "X1", "X2", ...
+                        # 若不是, 不做任何事，push_count 保持為 0
+                        if push_str == "爆":
+                            push_count = 99
+                        elif push_str.startswith("X"):
+                            push_count = -10
+                
+                articles.append({
+                    "title": title,
+                    "link": link,
+                    "author": author,
+                    "push_count": push_count
+                })
             
     return articles, prev_url
 
