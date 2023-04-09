@@ -1,4 +1,4 @@
-# [Python 網頁爬蟲入門實戰 2023](https://compthinking.dev/learning/py-web-scraping)
+# [Python 網頁爬蟲入門實戰 2023](https://compthinking.dev/courses/py-web-scraping)
 ## 課程單元
 
 1. [環境設定與網頁爬蟲初探](lecture/ch1.md)
