@@ -70,10 +70,10 @@
   
 ## 4-6. YouTube Data API: 頻道觀看數及影片列表
 
-* `ch4/youtube_channel.py`
 * `ch4/youtube_channel_videos.py`
 * 先到 [Google Developer Console](https://console.developers.google.com/) 啟用、取得自己的 API Key
 * 頻道資料
+  * 取得頻道 id: 在網頁原始碼中搜尋 https://www.youtube.com/channel/
   * https://developers.google.com/youtube/v3/docs/channels/list
   * 範例: https://www.youtube.com/channel/UCMUnInmOkrWN4gof9KlhNmQ
 * 播放列表資料
