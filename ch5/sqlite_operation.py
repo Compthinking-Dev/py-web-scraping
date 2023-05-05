@@ -22,13 +22,13 @@ if __name__ == "__main__":
     table = "gossiping"
 
     print(f"建立資料庫 {db} 及資料表 {table}")
-    cmd = f"CREATE TABLE {table} (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, href TEXT, push_count INTEGER, author TEXT)"
+    cmd = f"CREATE TABLE {table} (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, link TEXT, push_count INTEGER, author TEXT)"
     execute(db, cmd)
 
     print("插入測試資料")
     data = {
         "title": "測試文章標題",
-        "href": "/bbs/Gossiping/X.9999999999.X.999.html",
+        "link": "/bbs/Gossiping/X.9999999999.X.999.html",
         "push_count": 0,
         "author": "testAuthor"
     }
