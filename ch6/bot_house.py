@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 
 if __name__ == "__main__":
-    url = "http://www.bot.com.tw/house/default.aspx"
+    url = "https://wwwap.bot.com.tw/house/"
     try:
         options = Options()
         # options.add_argument('--headless')
