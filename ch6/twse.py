@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import time
 
 
 if __name__ == "__main__":
@@ -21,39 +22,52 @@ if __name__ == "__main__":
             if option.text == "民國 111 年":
                 option.click()
                 break
+
+        time.sleep(1)
         element = driver.find_element(By.XPATH, "//select[@name='mm']")
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "12月":
                 option.click()
                 break
+
+        time.sleep(1)
         element = driver.find_element(By.XPATH, "//select[@name='dd']")
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "20日 (二)":
                 option.click()
                 break
+
+        time.sleep(1)
         element = driver.find_element(By.XPATH, "//select[@name='type']")
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "ETF":
                 option.click()
                 break
 
-        element = driver.find_element(By.LINK_TEXT, "查詢")
+        time.sleep(1)
+        # element = driver.find_element(By.XPATH, "//*[@id='form']/div/div[1]/div[3]")
+        element = driver.find_element(By.CLASS_NAME, "submit")
         element.click()
 
         # 等待目標選單出現之後再點選: 顯示全部資料
         element = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//select[@name='report-table1_length']"))
+            EC.presence_of_element_located((By.CLASS_NAME, "per-page"))
         )
-        element = driver.find_element(By.XPATH, "//select[@name='report-table1_length']")
+
+        time.sleep(1)
+        element = driver.find_element(By.XPATH, "//div[@class='per-page']/select")
         element.click()
+
+        time.sleep(1)
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "全部":
                 option.click()
                 break
 
         # .page_source 可以回傳目前瀏覽器所看到的網頁文件
+        time.sleep(1)
         soup = BeautifulSoup(driver.page_source, "html.parser")
-        table = soup.find(id="report-table1")
+        table = soup.find("table")
         for row in table.find_all("tr"):
             print([s for s in row.stripped_strings])
     finally:
