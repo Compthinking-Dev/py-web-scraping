@@ -21,17 +21,9 @@ if __name__ == "__main__":
         element.send_keys("1120101")
 
         # 定位選單所在欄位並點擊
-        element = driver.find_element(By.ID, "purpose_DDL")
-        element.click()
-        # 巡覽選單, 點擊對應選項
-        for option in element.find_elements(By.TAG_NAME, "option"):
-            if option.text == "不拘":
-                option.click()
-                break
-
-        # 重複上述操作, 選擇顯示 100 筆結果
         element = driver.find_element(By.ID, "PageCount_DDL")
         element.click()
+        # 巡覽選單, 點擊對應選項
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "100":
                 option.click()

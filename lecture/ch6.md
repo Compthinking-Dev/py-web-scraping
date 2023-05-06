@@ -11,7 +11,7 @@
   * 定位網頁元件 (find_element by id/tag/class/link_text/xpath...)
   * 點擊, 輸入文字, 選擇選單, 拖拉...
   * 下載目前看到的網頁原始碼 (後續使用 Beautifulsoup 解析並取得資訊)
-* 範例: http://www.bot.com.tw/house/default.aspx 
+* 範例: https://wwwap.bot.com.tw/house/ 
   * (第一次啟動 Webdriver 時, Windows 可能會跳出防火牆警告, 請准許)
 * Webdriver 啟動時的選項
 ```
