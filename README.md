@@ -37,8 +37,8 @@
 
 6. [動態網站爬蟲](lecture/ch6.md)
 * 6-1. 台銀法拍屋 - 使用 Selenium
-* 6-2. PCHome 搜尋 - 使用 Selenium 及 requests.get()
-* 6-3. 臺灣證交所每日收盤行情 - 使用 Selenium 及 requests.post()
+* 6-2. PCHome 搜尋 - 使用 Selenium 及分析 API Endpoint
+* 6-3. 臺灣證交所每日收盤行情 - 使用 Selenium 及分析 API Endpoint
 
 7. [爬蟲程式經驗談](lecture/ch7.md)
 * 7-1. 被封鎖的常見原因: Timing, Policy Violation (robots.txt)
