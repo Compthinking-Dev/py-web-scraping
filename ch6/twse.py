@@ -45,7 +45,6 @@ if __name__ == "__main__":
                 break
 
         time.sleep(1)
-        # element = driver.find_element(By.XPATH, "//*[@id='form']/div/div[1]/div[3]")
         element = driver.find_element(By.CLASS_NAME, "submit")
         element.click()
 
@@ -56,9 +55,6 @@ if __name__ == "__main__":
 
         time.sleep(1)
         element = driver.find_element(By.XPATH, "//div[@class='per-page']/select")
-        element.click()
-
-        time.sleep(1)
         for option in element.find_elements(By.TAG_NAME, "option"):
             if option.text == "全部":
                 option.click()
