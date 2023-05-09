@@ -41,9 +41,9 @@
 * 6-3. 臺灣證交所每日收盤行情 - 使用 Selenium 及分析 API Endpoint
 
 7. [爬蟲程式經驗談](lecture/ch7.md)
-* 7-1. 被封鎖的常見原因: Timing, Policy Violation (robots.txt)
-* 7-2. 常用 Header 欄位、網站隱藏欄位
-* 7-3. 使用代理伺服器
+* 被封鎖的常見原因: Timing, Policy Violation (robots.txt)
+* 常用 Header 欄位、網站隱藏欄位
+* 使用代理伺服器
 
 ## 說明
 * 範例程式在各章目錄內, 講義在 `lecture` 目錄下
