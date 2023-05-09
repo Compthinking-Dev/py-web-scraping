@@ -3,8 +3,8 @@ import random
 
 if __name__ == '__main__':
     # 代理伺服器查詢: https://free-proxy-list.net/
-    proxy_ips = ['36.228.213.186:80', '106.104.134.209:8382']
+    proxy_ips = ['40.76.245.70:8080', '206.81.31.215:80']
     ip = random.choice(proxy_ips)
     print(f"Using {ip}")
-    resp = requests.get("http://httpbin.org/get", proxies={'http': 'http://' + ip}).json()
+    resp = requests.get("http://httpbin.org/ip", proxies={'http': 'http://' + ip}).json()
     print(resp)
