@@ -28,7 +28,7 @@
 * API Endpoint: `https://example.com/wp-json/wp/v2/posts`
 * 參數: per_page (每頁資料筆數), page (頁數)
 * 範例: https://decing.tw
-* 補充資料: [[Python 爬蟲] 如何爬取以 WordPress 架設的網站 Blog 文章](https://compthinking.dev/posts/wordpress-post-crawler-in-python)
+* 補充資料: [[Python 爬蟲] 如何爬取以 WordPress 架設的網站 Blog 文章](https://jlin.blog/wordpress-post-crawler-in-python)
 
 ## 4-3. 自由時報新聞網 API
 

@@ -36,7 +36,7 @@
 * 範例程式: `ch2/navigation.py`
 * [範例網頁](http://compthinking-dev.github.io/py-web-scraping/ch2/table.html)
 * 雖然 `find()`, `find_all()` 可以處理大部分問題, 但有時候巡覽網頁結構 (parent, children, next and previous siblings) 比較好用
-* 影片中提到了 iterator object, 想深入了解 iterator 是什麼的話可參考: [Python 中的 Iterator 是什麼](https://compthinking.dev/posts/what-is-iterator-in-python)
+* 影片中提到了 iterator object, 想深入了解 iterator 是什麼的話可參考: [Python 中的 Iterator 是什麼](https://jlin.blog/what-is-iterator-in-python)
 
 ```
 body
